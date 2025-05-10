@@ -1,5 +1,13 @@
+<script setup lang="ts">
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+</script>
+
 <template>
-<section class="alert">
-    <p class="text-sm">Hallo Welt</p>
-</section>
+    <section class="alert alert-warning">
+        <FontAwesomeIcon :icon="faInfoCircle" />
+        <p class="text-sm">Dies ist ein Demo Store von PocketStore.io</p>
+        <FontAwesomeIcon :icon="faInfoCircle" />
+    </section>
 </template>
