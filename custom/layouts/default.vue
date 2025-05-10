@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-gray-300 min-h-screen">
+    <section data-theme="light" class="bg-gray-300 min-h-screen">
         <header>
             <Header />
         </header>
@@ -15,16 +15,12 @@
     </section>
 </template>
 <script setup lang="ts">
-import './main.css';
+import '../main.css';
 import tracking from '~/util/tracking';
-import { useBreadcrumbStore } from '~/stores/breadcrumb';
 import Footer from '~/components/Footer.vue';
 import Header from '~/components/Header.vue';
 
-const store = useBreadcrumbStore();
-
 onMounted(() => {
     tracking.trackPage()
-    store.clear()
 });
 </script>

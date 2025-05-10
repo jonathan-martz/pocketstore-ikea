@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import { faCamera, faEdit, faGift, faGlobe, faHeart, faHouse, faMagnifyingGlass, faShoppingCart, faTruck, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
-</script>
-
 <template>
     <div class="w-full bg-black px-3 py-3 text-white flex justify-between">
         <section class="lang-select flex items-center">
@@ -36,17 +31,17 @@ import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
     <div class="w-full bg-white mb-3 px-3 py-3 flex justify-between max-w-6xl mx-auto">
         <section class="logo-search flex">
             <img src="https://www.ikea.com/global/assets/logos/brand/ikea.svg" class="h-8" alt="">
-            <div class="flex ml-3 bg-base-300 join">
-                <div class="bg-red-400 join-item rounded-full mr-3 px-3 flex items-center">
+            <div class="flex ml-3 bg-gray-400">
+                <div class="bg-red-400 mr-3 px-3 flex items-center">
                     <Fa :icon="faMagnifyingGlass" />
                 </div>
-                <input type="text" class="input input-sm bg-base-300 join-item" placeholder="Was suchen sie ?">
-                <div class="bg-red-400 join-item rounded-full ml-3 px-3 flex items-center">
+                <input type="text" class="input input-sm bg-gray-400 mx-0" placeholder="Was suchen sie ?">
+                <div class="bg-red-400 ml-3 px-3 flex items-center">
                     <Fa :icon="faCamera" />
                 </div>
             </div>
         </section>
-        <section class="icons flex justify-end space-x-6">
+        <section class="icons flex justify-end space-x-6 bg-gray-400">
             <section class="icon mt-1 mr-2">
                 <Fa :icon="faUser" />
                 <span class="ml-3 text-sm">Hallo, Jonathan</span>
@@ -60,3 +55,7 @@ import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
         </section>
     </div>
 </template>
+<script setup lang="ts">
+import { faCamera, faEdit, faGift, faGlobe, faHeart, faHouse, faMagnifyingGlass, faShoppingCart, faTruck, faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
+</script>
