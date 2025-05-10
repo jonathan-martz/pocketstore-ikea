@@ -8,7 +8,7 @@
                 <option value="de">DE - Deutsch</option>
             </select>
         </section>
-        <section class="features text-sm flex items-center">
+        <section class="features text-sm items-center hidden md:flex">
             <section class="icon mt-1 mx-3">
                 <Fa :icon="faGift" />
             </section>
