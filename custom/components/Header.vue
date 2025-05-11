@@ -89,8 +89,18 @@
             </a>
         </div>
         <div class="col-span-3">
-            <a href="/de/category/bowling.html" class="btn btn-warning btn-block btn-sm">
-                Bowling
+            <a href="/de/category/produkte.html" class="btn btn-warning btn-block btn-sm">
+                Produkte
+            </a>
+        </div>
+        <div class="col-span-3">
+            <a href="/de/category/räume.html" class="btn btn-warning btn-block btn-sm">
+                Räume
+            </a>
+        </div>
+        <div class="col-span-3">
+            <a href="/de/category/deko.html" class="btn btn-warning btn-block btn-sm">
+                Deko
             </a>
         </div>
         <div class="col-span-3">
