@@ -18,8 +18,22 @@
             <section class="icon mt-1 mx-3">
                 <Fa :icon="faTruck" />
             </section>
-            <button class="btn border-none hover:bg-transparent hover:border-none text-white bg-black">PLZ
+            <button onclick="my_modal_1.showModal()"
+                class="btn border-none hover:bg-transparent hover:border-none text-white bg-black">PLZ
                 eingeben</button>
+
+            <dialog id="my_modal_1" class="modal">
+                <div class="modal-box text-black">
+                    <h3 class="text-lg font-bold">Hello!</h3>
+                    <p class="py-4">Press ESC key or click the button below to close</p>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
             <span class="px-3 py-3">|</span>
             <section class="icon mt-1 mx-3">
                 <Fa :icon="faHouse" />
@@ -43,8 +57,8 @@
             <ul class="flex space-x-6 items-center ml-3 text-sm font-bold">
                 <li><a href="/">Produkte</a></li>
                 <li><a href="/">Räume</a></li>
-                <li><a href="/">Deko</a></li>
-                <li><a href="/">Möbel</a></li>
+                <li><a href="/">Standort</a></li>
+                <li><a href="/">Lieferung</a></li>
                 <li><a href="/">Kundenkonto</a></li>
             </ul>
         </section>
