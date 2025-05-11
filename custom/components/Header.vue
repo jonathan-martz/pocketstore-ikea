@@ -63,7 +63,9 @@
     </div>
     <section class="header md:hidden flex justify-between px-3 py-3 bg-black mb-2">
         <section class="logo">
-            <img src="https://www.ikea.com/global/assets/logos/brand/ikea.svg" class="h-8" alt="">
+            <a href="/">
+                <img src="https://www.ikea.com/global/assets/logos/brand/ikea.svg" class="h-8" alt="">
+            </a>
         </section>
         <section v-if="!open" class="bars">
             <button @click="open = !open" type="button">
