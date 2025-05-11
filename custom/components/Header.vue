@@ -35,9 +35,18 @@
             </a>
             <div class="flex ml-3 bg-gray-400">
                 <div class="px-3 flex items-center">
-                    <Fa :icon="faMagnifyingGlass" />
+                    <a href="/search">
+                        <Fa :icon="faMagnifyingGlass" />
+                    </a>
                 </div>
             </div>
+            <ul class="flex space-x-6 items-center ml-3 text-sm font-bold">
+                <li><a href="/">Produkte</a></li>
+                <li><a href="/">Räume</a></li>
+                <li><a href="/">Deko</a></li>
+                <li><a href="/">Möbel</a></li>
+                <li><a href="/">Kundenkonto</a></li>
+            </ul>
         </section>
         <section class="icons flex justify-end space-x-6 bg-gray-400 px-3">
             <section class="icon mt-1">
@@ -49,18 +58,6 @@
             <section class="icon mt-1 mr-2">
                 <Fa :icon="faShoppingCart" />
             </section>
-            <nav>
-                <section v-if="!open" class="bars">
-                    <button @click="open = !open" type="button">
-                        <FontAwesomeIcon color="black" size="1x" class="w-5 mt-2 mr-2" :icon="faBars" />
-                    </button>
-                </section>
-                <section v-else class="times">
-                    <button @click="open = !open" type="button">
-                        <FontAwesomeIcon color="black" size="1x" class="w-5 mt-2 mr-2" :icon="faTimes" />
-                    </button>
-                </section>
-            </nav>
         </section>
     </div>
     <section class="header md:hidden flex justify-between px-3 py-3 bg-black mb-2">
