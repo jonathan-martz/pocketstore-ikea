@@ -77,14 +77,24 @@
         </section>
     </section>
     <section v-if="open" class="header-content md:hidden grid grid-cols-6 gap-3 px-3 mb-2">
-        <div class="col-span-3 xs:col-span-2">
+        <div class="col-span-3">
             <a href="/" class="btn btn-warning btn-block btn-sm">
-                Hallo Welt
+                Startseite
             </a>
         </div>
-        <div class="col-span-3 xs:col-span-2">
-            <a href="/" class="btn btn-warning btn-block btn-sm">
-                Hallo Welt
+        <div class="col-span-3">
+            <a href="/search" class="btn btn-warning btn-block btn-sm">
+                Suche
+            </a>
+        </div>
+        <div class="col-span-3">
+            <a href="/profile" class="btn btn-warning btn-block btn-sm">
+                Profile
+            </a>
+        </div>
+        <div class="col-span-3">
+            <a href="/impressum" class="btn btn-warning btn-block btn-sm">
+                Impressum
             </a>
         </div>
     </section>
