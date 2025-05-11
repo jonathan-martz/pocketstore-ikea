@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-black px-3 py-3 text-white flex justify-between">
+    <div class="w-full bg-black px-3 py-3 text-white flex justify-between md:flex hidden">
         <section class="lang-select flex items-center">
             <section class="icon mx-3">
                 <Fa :icon="faGlobe" />
@@ -28,23 +28,18 @@
                 auswählen</button>
         </section>
     </div>
-    <div class="w-full bg-white mb-3 px-3 py-3 flex justify-between max-w-6xl mx-auto">
+    <div class="w-full bg-white mb-3 px-3 py-3 justify-between max-w-6xl mx-auto hidden md:flex">
         <section class="logo-search flex">
             <img src="https://www.ikea.com/global/assets/logos/brand/ikea.svg" class="h-8" alt="">
             <div class="flex ml-3 bg-gray-400">
-                <div class="bg-red-400 mr-3 px-3 flex items-center">
+                <div class="px-3 flex items-center">
                     <Fa :icon="faMagnifyingGlass" />
-                </div>
-                <input type="text" class="input input-sm bg-gray-400 mx-0" placeholder="Was suchen sie ?">
-                <div class="bg-red-400 ml-3 px-3 flex items-center">
-                    <Fa :icon="faCamera" />
                 </div>
             </div>
         </section>
-        <section class="icons flex justify-end space-x-6 bg-gray-400">
-            <section class="icon mt-1 mr-2">
+        <section class="icons flex justify-end space-x-6 bg-gray-400 px-3">
+            <section class="icon mt-1">
                 <Fa :icon="faUser" />
-                <span class="ml-3 text-sm">Hallo, Jonathan</span>
             </section>
             <section class="icon mt-1 mr-2">
                 <Fa :icon="faHeart" />
@@ -52,10 +47,56 @@
             <section class="icon mt-1 mr-2">
                 <Fa :icon="faShoppingCart" />
             </section>
+            <nav>
+                <section v-if="!open" class="bars">
+                    <button @click="open = !open" type="button">
+                        <FontAwesomeIcon color="black" size="1x" class="w-5 mt-2 mr-2" :icon="faBars" />
+                    </button>
+                </section>
+                <section v-else class="times">
+                    <button @click="open = !open" type="button">
+                        <FontAwesomeIcon color="black" size="1x" class="w-5 mt-2 mr-2" :icon="faTimes" />
+                    </button>
+                </section>
+            </nav>
         </section>
     </div>
+    <section class="header md:hidden flex justify-between px-3 py-3 bg-black mb-2">
+        <section class="logo">
+            <img src="https://www.ikea.com/global/assets/logos/brand/ikea.svg" class="h-8" alt="">
+        </section>
+        <section v-if="!open" class="bars">
+            <button @click="open = !open" type="button">
+                <FontAwesomeIcon color="white" size="2x" class="w-5 mr-2" :icon="faBars" />
+            </button>
+        </section>
+        <section v-else class="times">
+            <button @click="open = !open" type="button">
+                <FontAwesomeIcon color="white" size="2x" class="w-5 mr-2" :icon="faTimes" />
+            </button>
+        </section>
+    </section>
+    <section v-if="open" class="header-content md:hidden grid grid-cols-6 gap-3 px-3 mb-2">
+        <div class="col-span-3 xs:col-span-2">
+            <a href="/" class="btn btn-warning btn-block btn-sm">
+                Hallo Welt
+            </a>
+        </div>
+        <div class="col-span-3 xs:col-span-2">
+            <a href="/" class="btn btn-warning btn-block btn-sm">
+                Hallo Welt
+            </a>
+        </div>
+    </section>
 </template>
 <script setup lang="ts">
-import { faCamera, faEdit, faGift, faGlobe, faHeart, faHouse, faMagnifyingGlass, faShoppingCart, faTruck, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
+import { faBars, faTimes, faGift, faGlobe, faHeart, faHouse, faMagnifyingGlass, faShoppingCart, faTruck, faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { useLocalStorage } from '@vueuse/core';
+
+const open = useLocalStorage('open-mobile', false, {});
+
+onMounted(() => {
+    open.value = false;
+})
 </script>
