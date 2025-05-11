@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 <template>
     <section class="alert alert-warning">
         <FontAwesomeIcon :icon="faInfoCircle" />
-        <p class="text-sm">Dies ist ein Demo Store von PocketStore.io</p>
+        <p class="text-sm block text-center">Dies ist ein Demo Store von PocketStore.io</p>
         <FontAwesomeIcon :icon="faInfoCircle" />
     </section>
 </template>
