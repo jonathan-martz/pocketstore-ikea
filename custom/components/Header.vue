@@ -49,9 +49,6 @@
             </ul>
         </section>
         <section class="icons flex justify-end space-x-6 bg-gray-400 px-3">
-            <section class="icon mt-1">
-                <Fa :icon="faUser" />
-            </section>
             <section class="icon mt-1 mr-2">
                 <Fa :icon="faHeart" />
             </section>
