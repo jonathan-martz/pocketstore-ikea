@@ -30,7 +30,9 @@
     </div>
     <div class="w-full bg-white mb-3 px-3 py-3 justify-between max-w-6xl mx-auto hidden md:flex">
         <section class="logo-search flex">
-            <img src="https://www.ikea.com/global/assets/logos/brand/ikea.svg" class="h-8" alt="">
+            <a href="/">
+                <img src="https://www.ikea.com/global/assets/logos/brand/ikea.svg" class="h-8" alt="">
+            </a>
             <div class="flex ml-3 bg-gray-400">
                 <div class="px-3 flex items-center">
                     <Fa :icon="faMagnifyingGlass" />
