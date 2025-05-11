@@ -21,6 +21,7 @@ jobs:
             source ~/.nvm/nvm.sh
             cd /var/www/pocketstore-ikea
             git pull
+            go run bin/extend.go
             cd storefront
             npm i
             npm run build
