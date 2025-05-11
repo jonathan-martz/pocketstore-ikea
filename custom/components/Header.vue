@@ -90,6 +90,16 @@
             </a>
         </div>
         <div class="col-span-3">
+            <a href="/de/category/bowling.html" class="btn btn-warning btn-block btn-sm">
+                Bowling
+            </a>
+        </div>
+        <div class="col-span-3">
+            <a href="/de/category/möbel.html" class="btn btn-warning btn-block btn-sm">
+                Möbel
+            </a>
+        </div>
+        <div class="col-span-3">
             <a href="/profile" class="btn btn-warning btn-block btn-sm">
                 Profile
             </a>
