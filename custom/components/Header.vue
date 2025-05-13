@@ -9,37 +9,52 @@
             </select>
         </section>
         <section class="features text-sm items-center hidden md:flex">
-            <section class="icon mt-1 mx-3">
-                <Fa :icon="faGift" />
-            </section>
-            <span>50 Jahre IKEA Deutschland</span>
+            <button onclick="modal_gift.showModal()">
+                <Fa :icon="faGift" class="mr-2" />
+                <span>50 Jahre IKEA Deutschland</span>
+            </button>
         </section>
+        <dialog id="modal_gift" class="modal">
+            <div class="modal-box text-black">
+                <h3 class="text-lg font-bold">Hello!</h3>
+                <p class="py-4">Press ESC key or click outside to close</p>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
         <section class="store-select flex items-center">
-            <section class="icon mt-1 mx-3">
-                <Fa :icon="faTruck" />
-            </section>
-            <button onclick="my_modal_1.showModal()"
-                class="btn border-none hover:bg-transparent hover:border-none text-white bg-black">PLZ
-                eingeben</button>
 
-            <dialog id="my_modal_1" class="modal">
+            <button onclick="modal_delivery.showModal()"
+                class="btn border-none hover:bg-transparent hover:border-none text-white bg-black">
+                <Fa :icon="faTruck" class="mr-2" />
+                <span>PLZ
+                    eingeben</span>
+            </button>
+            <dialog id="modal_delivery" class="modal">
                 <div class="modal-box text-black">
                     <h3 class="text-lg font-bold">Hello!</h3>
-                    <p class="py-4">Press ESC key or click the button below to close</p>
-                    <div class="modal-action">
-                        <form method="dialog">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn">Close</button>
-                        </form>
-                    </div>
+                    <p class="py-4">Press ESC key or click outside to close</p>
                 </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
             </dialog>
             <span class="px-3 py-3">|</span>
-            <section class="icon mt-1 mx-3">
-                <Fa :icon="faHouse" />
-            </section>
-            <button class="btn border-none hover:bg-transparent hover:border-none text-white bg-black">Standort
-                auswählen</button>
+            <button onclick="modal_location.showModal()"
+                class="btn border-none hover:bg-transparent hover:border-none text-white bg-black">
+                <Fa :icon="faHouse" class="mr-2" />
+                <span>Standort auswählen</span>
+            </button>
+            <dialog id="modal_location" class="modal">
+                <div class="modal-box text-black">
+                    <h3 class="text-lg font-bold">Hello!</h3>
+                    <p class="py-4">Press ESC key or click outside to close</p>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
         </section>
     </div>
     <div class="w-full bg-white mb-3 px-3 py-3 justify-between max-w-6xl mx-auto hidden md:flex">
@@ -55,11 +70,11 @@
                 </div>
             </div>
             <ul class="flex space-x-6 items-center ml-3 text-sm font-bold">
-                <li><a href="/">Produkte</a></li>
-                <li><a href="/">Räume</a></li>
-                <li><a href="/">Standort</a></li>
-                <li><a href="/">Lieferung</a></li>
-                <li><a href="/">Kundenkonto</a></li>
+                <li><a href="/de/produkte.html">Produkte</a></li>
+                <li><a href="/de/räume.html">Räume</a></li>
+                <li><button onclick="modal_location.showModal()">Standort</button></li>
+                <li><button onclick="modal_delivery.showModal()">Lieferung</button></li>
+                <li><a href="/customer/profile">Kundenkonto</a></li>
             </ul>
         </section>
         <section class="icons flex justify-end space-x-6 bg-gray-400 px-3">
@@ -88,48 +103,7 @@
             </button>
         </section>
     </section>
-    <section v-if="open" class="header-content md:hidden grid grid-cols-6 gap-3 px-3 mb-2">
-        <div class="col-span-3">
-            <a href="/" class="btn btn-warning btn-block btn-sm">
-                Startseite
-            </a>
-        </div>
-        <div class="col-span-3">
-            <a href="/search" class="btn btn-warning btn-block btn-sm">
-                Suche
-            </a>
-        </div>
-        <div class="col-span-3">
-            <a href="/de/category/produkte.html" class="btn btn-warning btn-block btn-sm">
-                Produkte
-            </a>
-        </div>
-        <div class="col-span-3">
-            <a href="/de/category/räume.html" class="btn btn-warning btn-block btn-sm">
-                Räume
-            </a>
-        </div>
-        <div class="col-span-3">
-            <a href="/de/category/deko.html" class="btn btn-warning btn-block btn-sm">
-                Deko
-            </a>
-        </div>
-        <div class="col-span-3">
-            <a href="/de/category/möbel.html" class="btn btn-warning btn-block btn-sm">
-                Möbel
-            </a>
-        </div>
-        <div class="col-span-3">
-            <a href="/profile" class="btn btn-warning btn-block btn-sm">
-                Profile
-            </a>
-        </div>
-        <div class="col-span-3">
-            <a href="/impressum" class="btn btn-warning btn-block btn-sm">
-                Impressum
-            </a>
-        </div>
-    </section>
+    <MobileContent />
 </template>
 <script setup lang="ts">
 import { faBars, faTimes, faGift, faGlobe, faHeart, faHouse, faMagnifyingGlass, faShoppingCart, faTruck, faUser } from '@fortawesome/free-solid-svg-icons';
