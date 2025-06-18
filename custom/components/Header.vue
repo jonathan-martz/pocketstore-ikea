@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="header bg-black px-3 py-3 mb-3 text-white">
-      <div class="flex justify-between">
+      <div class="hidden md:flex md:justify-between">
         <section class="language flex items-center">
           <FontAwesomeIcon :icon="faFlag" class=""></FontAwesomeIcon>
           <select
@@ -29,9 +29,29 @@
           </button>
         </section>
       </div>
+      <section class="logo flex justify-between md:hidden">
+        <section class="logo">
+          <img
+            src="https://www.ikea.com/global/assets/logos/brand/ikea.svg"
+            alt="" class="h-10 my-3 mx-3"
+          />
+        </section>
+        <nav class="items-center flex">
+          <section v-if="!open" class="bars">
+            <button @click="open = !open" class="btn btn-primary">
+              <FontAwesomeIcon :icon="faBars" />
+            </button>
+          </section>
+          <section v-else class="times">
+            <button @click="open = !open" class="btn btn-primary">
+              <FontAwesomeIcon :icon="faTimes" />
+            </button>
+          </section>
+        </nav>
+      </section>
     </section>
     <section
-      class="header bg-transparent max-w-6xl mx-auto class mb-3 flex justify-between"
+      class="hidden header bg-transparent max-w-6xl mx-auto class mb-3 md:flex md:justify-between"
     >
       <div class="flex">
         <img
@@ -49,7 +69,10 @@
           <span class="text-sm ml-3">Hej, Jonathan</span>
         </button>
         <button>
-          <FontAwesomeIcon :icon="faHeart" class="text-red-400"></FontAwesomeIcon>
+          <FontAwesomeIcon
+            :icon="faHeart"
+            class="text-red-400"
+          ></FontAwesomeIcon>
         </button>
         <button>
           <FontAwesomeIcon :icon="faShoppingCart"></FontAwesomeIcon>
@@ -67,8 +90,14 @@ import {
   faFlag,
   faUser,
   faMagnifyingGlass,
+  faBars,
+  faTimes,
   faHeart,
   faShoppingCart,
   faGift,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { useLocalStorage } from "@vueuse/core";
+
+const open = useLocalStorage("open", false, {});
 </script>
