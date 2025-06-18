@@ -33,17 +33,18 @@
         <section class="logo">
           <img
             src="https://www.ikea.com/global/assets/logos/brand/ikea.svg"
-            alt="" class="h-10 my-3 mx-3"
+            alt=""
+            class="h-10"
           />
         </section>
         <nav class="items-center flex">
-          <section v-if="!open" class="bars">
-            <button @click="open = !open" class="btn btn-primary">
+          <section v-if="!drawer" class="bars">
+            <button @click="drawer = !drawer" class="btn btn-primary">
               <FontAwesomeIcon :icon="faBars" />
             </button>
           </section>
           <section v-else class="times">
-            <button @click="open = !open" class="btn btn-primary">
+            <button @click="drawer = !drawer" class="btn btn-primary">
               <FontAwesomeIcon :icon="faTimes" />
             </button>
           </section>
@@ -79,6 +80,59 @@
         </button>
       </div>
     </section>
+    <div class="drawer">
+      <input
+        id="my-drawer"
+        type="checkbox"
+        v-model="drawer"
+        class="drawer-toggle"
+      />
+      <div class="drawer-side">
+        <label
+          for="my-drawer"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu bg-black text-white min-h-full w-80 p-4">
+          <!-- Sidebar content here -->
+          <li>
+            <img
+              src="https://www.ikea.com/global/assets/logos/brand/ikea.svg"
+              alt=""
+              class="mr-auto"
+            />
+          </li>
+          <li>
+            <div class="divider-primary divider">Produkte</div>
+          </li>
+          <li><a>Bett</a></li>
+          <li><a>KleiderSchrank</a></li>
+          <li><a>Küche</a></li>
+          <li><a>Tisch</a></li>
+          <li>
+            <div class="divider-primary divider">Räume</div>
+          </li>
+          <li><a>Schlafzimmer</a></li>
+          <li><a>Küche</a></li>
+          <li><a>Bad</a></li>
+          <li><a>Wohnzimmer</a></li>
+          <li>
+            <div class="divider-primary divider">Hallo Welt</div>
+          </li>
+          <li><a>Sidebar Item 1</a></li>
+          <li><a>Sidebar Item 2</a></li>
+          <li><a>Sidebar Item 2</a></li>
+          <li><a>Sidebar Item 2</a></li>
+           <li>
+            <div class="divider-primary divider">Hallo Welt</div>
+          </li>
+          <li><a>Sidebar Item 1</a></li>
+          <li><a>Sidebar Item 2</a></li>
+          <li><a>Sidebar Item 2</a></li>
+          <li><a>Sidebar Item 2</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -99,5 +153,9 @@ import {
 
 import { useLocalStorage } from "@vueuse/core";
 
-const open = useLocalStorage("open", false, {});
+const drawer = useLocalStorage("drawer", false, {});
+
+onMounted(() => {
+  drawer.value = false;
+});
 </script>
