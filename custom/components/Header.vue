@@ -107,7 +107,7 @@
         </li>
         <li class="">
           <button
-            @click="saleModal = true"
+            @click="locationModal = true"
             class="btn btn-block bg-black text-white"
           >
             <FontAwesomeIcon :icon="faStore"></FontAwesomeIcon>
