@@ -12,18 +12,23 @@
             <option value="">DE - Deutsch</option>
           </select>
         </section>
-        <section class="sale flex items-center">
-          <FontAwesomeIcon :icon="faGift"></FontAwesomeIcon>
-          <span class="text-sm ml-3"
-            >Sale - Jetzt in deinem IKEA Einrichtungshaus</span
-          >
+        <section
+          @click="saleModal = true"
+          class="sale flex items-center cursor-pointer"
+        >
+          <button @click="saleModal = true">
+            <FontAwesomeIcon :icon="faGift"></FontAwesomeIcon>
+            <span class="text-sm ml-3"
+              >Sale - Jetzt in deinem IKEA Einrichtungshaus</span
+            >
+          </button>
         </section>
         <section class="zipcode-and-location space-x-6 flex items-center">
-          <button>
+          <button @click="truckModal = true" class="cursor-pointer">
             <FontAwesomeIcon :icon="faTruck"></FontAwesomeIcon>
             <span class="text-sm ml-3">PLZ eingeben</span>
           </button>
-          <button>
+          <button @click="locationModal = true" class="cursor-pointer">
             <FontAwesomeIcon :icon="faStore"></FontAwesomeIcon>
             <span class="text-sm ml-3">Standort auswählen</span>
           </button>
@@ -80,6 +85,9 @@
         </button>
       </div>
     </section>
+    <ModalTruck />
+    <ModalLocation />
+    <ModalSale />
     <div class="drawer">
       <input
         id="my-drawer"
@@ -137,6 +145,7 @@ import {
   faFlag,
   faUser,
   faMagnifyingGlass,
+  faCopy,
   faBars,
   faTimes,
   faHeart,
@@ -147,8 +156,14 @@ import {
 import { useLocalStorage } from "@vueuse/core";
 
 const drawer = useLocalStorage("drawer", false, {});
+const saleModal = useLocalStorage("saleModal", false, {});
+const truckModal = useLocalStorage("truckModal", false, {});
+const locationModal = useLocalStorage("locationModal", false, {});
 
 onMounted(() => {
   drawer.value = false;
+  saleModal.value = false;
+  truckModal.value = false;
+  locationModal.value = false;
 });
 </script>
