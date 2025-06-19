@@ -85,6 +85,37 @@
         </button>
       </div>
     </section>
+    <section class="test px-3 md:hidden">
+      <ul class="space-y-3">
+        <li class="">
+          <button
+            @click="saleModal = true"
+            class="btn btn-block bg-black text-white"
+          >
+            <FontAwesomeIcon :icon="faGift"></FontAwesomeIcon>
+            <span class="text-sm ml-3">Sale - Gutschein Code</span>
+          </button>
+        </li>
+        <li class="">
+          <button
+            @click="truckModal = true"
+            class="btn btn-block bg-black text-white"
+          >
+            <FontAwesomeIcon :icon="faTruck"></FontAwesomeIcon>
+            <span class="text-sm ml-3">Lieferung auswählen</span>
+          </button>
+        </li>
+        <li class="">
+          <button
+            @click="saleModal = true"
+            class="btn btn-block bg-black text-white"
+          >
+            <FontAwesomeIcon :icon="faStore"></FontAwesomeIcon>
+            <span class="text-sm ml-3">Standort auswählen</span>
+          </button>
+        </li>
+      </ul>
+    </section>
     <ModalTruck />
     <ModalLocation />
     <ModalSale />
